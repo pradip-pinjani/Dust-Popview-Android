@@ -1,0 +1,81 @@
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+}
+
+android {
+    namespace 'pradip.dust.popview'
+    compileSdk 35
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 35
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    testImplementation 'junit:junit:4.13.2'
+}
+
+afterEvaluate {
+    /*publishing {
+
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                groupId = 'pradip.dust.popview'
+                artifactId = 'dustpopview'
+                version = '1.0.0'
+
+                pom {
+                    name = 'Dust-PopView'
+                    description = 'Forked and updated version of rb.popview with modern Android support'
+                    url = 'https://github.com/pradip-pinjani/Dust-Popview-Android'
+
+                    licenses {
+                        license {
+                            name = 'The Apache License, Version 2.0'
+                            url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        }
+                    }
+
+                    developers {
+                        developer {
+                            id = 'pradip-pinjani'
+                            name = 'Pradip Pinjani'
+                            email = 'pradip.pinjani32@gmail.com'
+                        }
+                    }
+
+                    scm {
+                        connection = 'scm:git:github.com/pradip-pinjani/Dust-Popview-Android.git'
+                        developerConnection = 'scm:git:ssh://github.com:pradip-pinjani/Dust-Popview-Android.git'
+                        url = 'https://github.com/pradip-pinjani/Dust-Popview-Android'
+                    }
+                }
+            }
+        }
+
+        repositories {
+            maven {
+                name = 'GitHubPackages'
+                url = uri("https://maven.pkg.github.com/pradip-pinjani/Dust-Popview-Android")
+                credentials {
+                    username = project.findProperty("githubUsername") ?: System.getenv("GITHUB_USERNAME")
+                    password = project.findProperty("githubToken") ?: System.getenv("GITHUB_TOKEN")
+                }
+            }
+        }
+    }*/
+}

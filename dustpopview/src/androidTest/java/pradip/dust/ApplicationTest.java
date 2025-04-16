@@ -1,4 +1,4 @@
-package rb.popview;
+package pradip.dust;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
