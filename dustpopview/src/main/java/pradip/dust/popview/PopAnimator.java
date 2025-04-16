@@ -25,14 +25,14 @@ public class PopAnimator extends ValueAnimator {
 	private static final Interpolator FOLLOWUP_INTERPOLATOR = new AccelerateInterpolator(0.8f);
 	private boolean mIsFollowedUp = false;
 	private int defaultRadius;
-	private Paint mPaint;
-	private Rect mBound;
-	private Particle[][] mParticles;
-	private Bitmap mBitmap;
-	private View mContainer;
+	private final Paint mPaint;
+	private final Rect mBound;
+	private final Particle[][] mParticles;
+	private final Bitmap mBitmap;
+	private final View mContainer;
 	private boolean isFirstTime = true;
-	float startX[][];
-	float startY[][];
+	float[][] startX;
+	float[][] startY;
 	long totalNoOfDrawsAdvance = DEFAULT_DURATION*60;	//For 60 fps
 	long totalNoOfDrawsFollow = totalNoOfDrawsAdvance;
 	long noOfDrawsAdvance = 0, noOfDrawsFollow = 0;
@@ -127,10 +127,10 @@ public class PopAnimator extends ValueAnimator {
 		return particle;
 	}
 
-	public boolean draw (Canvas canvas) {
+	public void draw (Canvas canvas) {
 
 		if(!isStarted()) {
-			return false;
+			return;
 		}
 
 		for (int i = 0; i < mParticles.length; i++) {
@@ -139,7 +139,7 @@ public class PopAnimator extends ValueAnimator {
 					noOfDrawsFollow++;
 					if(noOfDrawsFollow >totalNoOfDrawsFollow) {
 						mContainer.invalidate();
-						return true;
+						return;
 					}
 					if(isFirstTime) {
 						startX[i][j] = mParticles[i][j].x;
@@ -156,7 +156,7 @@ public class PopAnimator extends ValueAnimator {
 					noOfDrawsAdvance++;
 					if(noOfDrawsAdvance> totalNoOfDrawsAdvance) {
 						mContainer.invalidate();
-						return true;
+						return;
 					}
 					mParticles[i][j].advance((float) getAnimatedValue(), mBound, mBitmap, PARTICLE_MOVE_FACTOR);
 					if (mParticles[i][j].alpha > 0f) {
@@ -170,7 +170,6 @@ public class PopAnimator extends ValueAnimator {
 
 		isFirstTime = false;
 		mContainer.invalidate();
-		return true;
 	}
 
 	@Override
