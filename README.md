@@ -1,7 +1,5 @@
-# Popview-Android
+# Dust-Popview-Android
 Pop animation with circular dust effect for any view updation
-
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Popview--Android-green.svg?style=true)](https://android-arsenal.com/details/1/3813)
 
 ![Screenshots](https://media.giphy.com/media/FoGScttOF8e40/giphy.gif) 
 
@@ -10,7 +8,7 @@ Pop animation with circular dust effect for any view updation
 
 ```groovy
 dependencies {
-    compile 'rb.popview:popview:0.1.0'
+    compile 'pradip.dust.popview:dustpopview:1.0'
 }
 ```    
 <h4>Usage</h4>
@@ -63,7 +61,14 @@ Inspired by and thanks to [Tyrantgit's Explosion field](https://github.com/tyran
 
 # License
 
-Copyright 2017 krishnarb3
+## 📦 Based On
+
+This library is a fork of [PopView](https://github.com/krishnarb3/Popview-Android) by [Original Author](https://github.com/krishnarb3).
+
+Modified and maintained by [Pradip Pinjani](https://github.com/pradip-pinjani).
+
+
+Copyright 2017 pradip-pinjani
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
