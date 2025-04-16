@@ -8,7 +8,7 @@ Pop animation with circular dust effect for any view updation
 
 ```groovy
 dependencies {
-    compile 'pradip.dust.popview:dustpopview:1.0'
+   implementation 'pradip.dust.popview:dustpopview:1.0.1'
 }
 ```    
 <h4>Usage</h4>
@@ -68,7 +68,7 @@ This library is a fork of [PopView](https://github.com/krishnarb3/Popview-Androi
 Modified and maintained by [Pradip Pinjani](https://github.com/pradip-pinjani).
 
 
-Copyright 2017 pradip-pinjani
+Copyright 2025 pradip-pinjani
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
