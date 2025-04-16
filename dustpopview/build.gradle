@@ -11,7 +11,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 35
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
     }
     buildTypes {
         release {
@@ -28,11 +28,10 @@ dependencies {
 }
 
 afterEvaluate {
-    /*publishing {
+    publishing {
 
         publications {
             release(MavenPublication) {
-                from components.release
 
                 groupId = 'pradip.dust.popview'
                 artifactId = 'dustpopview'
@@ -77,5 +76,5 @@ afterEvaluate {
                 }
             }
         }
-    }*/
+    }
 }
